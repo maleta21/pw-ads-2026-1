@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- A div "root" será usada posteriormente pelo React -->
+     <div id="root"></div>
+
+     <script>
+        /*
+          DOM significa "Document Object Model".
+          O termo se refere à forma como a linguagem JavaScript
+          "enxerga" oselementos de uma página HTML.
+          Quando usamos JS para criar novos elementos em uma página,
+          alterá-los ou mesmo excluí-los, diz-se que estamos
+          "manipulando o DOM".
+        */
+
+       //Criando um novo paragrafo na pagina usando JS
+       const parag = document.createElement('p')
+       parag.textContent = 'Este parágrafo foi criado com JS.'
+       
+       // Captura (acessa) o elemento correspondente à div "root"
+       const root = document.getElementById('root')
+
+       // Faz com que o novo parágrafo seja "adotado" pela div "root"
+       root.appendChild(parag)
+     </script>
+     
+</body>
+</html>
