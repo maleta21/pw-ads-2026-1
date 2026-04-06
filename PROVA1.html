@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vermelho {
+            color: #FF2A00
+        }
+
+        .verde {
+            color: #7CFF5C
+        }
+
+        .amarelo {
+            color: #FFEA2B
+        }
+    </style>
+</head>
+<body>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+    <div id="root"></div>
+  
+    <script type="text/babel">
+
+        const Produto = ({ produto, preco, estoque }) => {
+          return (
+            <>
+              <h1 className="vermelho">{produto}</h1>
+              <p className="verde">R$ {preco.toFixed(2)}</p>
+              <p className="amarelo">Quantidade em estoque: {estoque}</p>
+            </>
+          )
+        }
+      
+        const container = (
+          <>
+            <Produto produto="Notebook" preco={5000} estoque={10} />
+            <Produto produto="Teclado" preco={200} estoque={20} />
+            <Produto produto="Mouse" preco={50} estoque={30} />
+          </>
+        )
+      
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+      
+        root.render(container)
+      
+        /*
+         No const produto eu adicionei os props produto, preco e estoque
+         o produto sendo um h1 para dar destaque com um texto maior na pagina do texto
+         o const container contem exemplos de produtos
+         e no final contem o const root e o root.render para ser exibido no navegador
+         fiz com a ajuda de anotações de codigos feitos em sala
+        */
+
+      </script>
+
+</body>
+</html>
